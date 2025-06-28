@@ -26,7 +26,7 @@ const mockRestaurants: Restaurant[] = [
     address: "Calle Principal 123, Madrid",
     rating: 4.5,
     reviews: 128,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Sushi_bandeja.jpg/1200px-Sushi_bandeja.jpg",
+    image: "https://statics.forbes.com.ec/2021/08/611e778edafc9.jpg",
     isFavorite: false,
   },
   {
@@ -36,7 +36,7 @@ const mockRestaurants: Restaurant[] = [
     address: "Av. Central 45, Barcelona",
     rating: 4.8,
     reviews: 93,
-    image: "/public/file.svg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Sushi_bandeja.jpg/1200px-Sushi_bandeja.jpg",
     isFavorite: true,
   },
   {
@@ -46,7 +46,7 @@ const mockRestaurants: Restaurant[] = [
     address: "Plaza Mayor 8, Valencia",
     rating: 4.3,
     reviews: 75,
-    image: "/placeholder.svg?height=200&width=300",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4ODK2tmAkskaKYm0JUz6aHpeo7TyvAHxT8A&s",
     isFavorite: false,
   },
   {
@@ -56,7 +56,7 @@ const mockRestaurants: Restaurant[] = [
     address: "Calle Nueva 67, Madrid",
     rating: 4.2,
     reviews: 156,
-    image: "/placeholder.svg?height=200&width=300",
+    image: "https://www.foodandwine.com/thmb/DI29Houjc_ccAtFKly0BbVsusHc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/crispy-comte-cheesburgers-FT-RECIPE0921-6166c6552b7148e8a8561f7765ddf20b.jpg",
     isFavorite: true,
   },
   {
@@ -66,7 +66,7 @@ const mockRestaurants: Restaurant[] = [
     address: "Plaza España 12, Sevilla",
     rating: 4.6,
     reviews: 89,
-    image: "/placeholder.svg?height=200&width=300",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/66/Paella_de_marisco_01_%28cropped%29_4.3.jpg",
     isFavorite: false,
   },
   {
@@ -76,7 +76,7 @@ const mockRestaurants: Restaurant[] = [
     address: "Calle Asia 34, Barcelona",
     rating: 4.4,
     reviews: 67,
-    image: "/placeholder.svg?height=200&width=300",
+    image: "https://s2.ppllstatics.com/diariovasco/www/multimedia/202204/05/media/cortadas/padthai-RkrJOgdw4udPO82GczIITAI-1248x770@Diario%20Vasco.jpg",
     isFavorite: false,
   },
 ]
