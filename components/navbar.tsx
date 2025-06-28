@@ -44,6 +44,12 @@ export function Navbar() {
               >
                 Cómo Funciona
               </Link>
+              <Link
+                href="/dashboard"
+                className="text-gray-700 hover:text-red-500 px-3 py-2 text-sm font-medium transition-colors"
+              >
+                Dashboard
+              </Link>
               <Link href="/login">
                 <Button
                   variant="outline"
