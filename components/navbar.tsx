@@ -2,11 +2,13 @@
 
 import Link from "next/link"
 import { useState } from "react"
+import { useSession, signOut } from "next-auth/react"
 import { Button } from "@/components/ui/button"
 import { Menu, X, User } from "lucide-react"
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { data: session } = useSession()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -50,16 +52,27 @@ export function Navbar() {
               >
                 Dashboard
               </Link>
-              <Link href="/login">
+              {session ? (
                 <Button
                   variant="outline"
                   size="sm"
+                  onClick={() => signOut({ callbackUrl: "/" })}
                   className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition-colors bg-transparent"
                 >
-                  <User className="h-4 w-4 mr-2" />
-                  Iniciar Sesión
+                  Cerrar Sesión
                 </Button>
-              </Link>
+              ) : (
+                <Link href="/login">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition-colors bg-transparent"
+                  >
+                    <User className="h-4 w-4 mr-2" />
+                    Iniciar Sesión
+                  </Button>
+                </Link>
+              )}
             </div>
           </div>
 
@@ -101,16 +114,30 @@ export function Navbar() {
               Cómo Funciona
             </Link>
             <div className="px-3 py-2">
-              <Link href="/login" onClick={() => setIsMenuOpen(false)}>
+              {session ? (
                 <Button
                   variant="outline"
                   size="sm"
+                  onClick={() => {
+                    setIsMenuOpen(false)
+                    signOut({ callbackUrl: "/" })
+                  }}
                   className="w-full border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition-colors bg-transparent"
                 >
-                  <User className="h-4 w-4 mr-2" />
-                  Iniciar Sesión
+                  Cerrar Sesión
                 </Button>
-              </Link>
+              ) : (
+                <Link href="/login" onClick={() => setIsMenuOpen(false)}>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition-colors bg-transparent"
+                  >
+                    <User className="h-4 w-4 mr-2" />
+                    Iniciar Sesión
+                  </Button>
+                </Link>
+              )}
             </div>
           </div>
         </div>
