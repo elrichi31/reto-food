@@ -3,6 +3,8 @@
 import type React from "react"
 
 import { useState } from "react"
+import { signIn } from "next-auth/react"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -18,18 +20,25 @@ export function LoginForm() {
   const [password, setPassword] = useState("")
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
 
-    // Simulate login process
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-
-    console.log("Login attempt:", { userType, email, password })
-    alert(`Iniciando sesión como ${userType === "foodie" ? "Foodie" : "Restaurante"}`)
+    const res = await signIn("credentials", {
+      redirect: false,
+      email,
+      password,
+    })
 
     setIsLoading(false)
+
+    if (!res?.error) {
+      router.push("/dashboard")
+    } else {
+      alert("Credenciales inválidas")
+    }
   }
 
   return (
