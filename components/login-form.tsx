@@ -146,7 +146,7 @@ export function LoginForm() {
         </form>
 
         {/* Sign Up Link */}
-        <div className="text-center pt-4">
+        <div className="text-center py-4">
           <p className="text-gray-600 text-sm">
             ¿No tienes una cuenta?{" "}
             <Link href="/apply" className="text-red-500 hover:text-red-600 font-medium transition-colors">
