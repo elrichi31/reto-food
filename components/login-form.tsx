@@ -20,11 +20,13 @@ export function LoginForm() {
   const [password, setPassword] = useState("")
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState("")
   const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
+    setError("")
 
     const res = await signIn("credentials", {
       redirect: false,
@@ -37,7 +39,7 @@ export function LoginForm() {
     if (!res?.error) {
       router.push("/dashboard")
     } else {
-      alert("Credenciales inválidas")
+      setError("Usuario o contraseña incorrecto")
     }
   }
 
@@ -138,10 +140,13 @@ export function LoginForm() {
           >
             {isLoading ? "Iniciando..." : "Iniciar Sesión"}
           </Button>
+          {error && (
+            <p className="pt-2 text-center text-sm text-red-500">{error}</p>
+          )}
         </form>
 
         {/* Sign Up Link */}
-        <div className="text-center pt-4">
+        <div className="text-center py-4">
           <p className="text-gray-600 text-sm">
             ¿No tienes una cuenta?{" "}
             <Link href="/apply" className="text-red-500 hover:text-red-600 font-medium transition-colors">

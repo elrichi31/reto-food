@@ -1,5 +1,3 @@
-import { Navbar } from "@/components/navbar"
-
 export default function FoodiesPage() {
   return (
     <div className="min-h-screen bg-gray-50">

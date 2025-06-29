@@ -46,6 +46,14 @@ export function Navbar() {
               >
                 Cómo Funciona
               </Link>
+              {session && (
+                <Link
+                  href="/dashboard"
+                  className="text-gray-700 hover:text-red-500 px-3 py-2 text-sm font-medium transition-colors"
+                >
+                  Dashboard
+                </Link>
+              )}
               {session ? (
                 <Button
                   variant="outline"
@@ -107,6 +115,15 @@ export function Navbar() {
             >
               Cómo Funciona
             </Link>
+            {session && (
+              <Link
+                href="/dashboard"
+                className="text-gray-700 hover:text-red-500 block px-3 py-2 text-base font-medium transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Dashboard
+              </Link>
+            )}
             <div className="px-3 py-2">
               {session ? (
                 <Button

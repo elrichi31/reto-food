@@ -64,7 +64,10 @@ export function FoodieApplicationForm() {
 
   const [errors, setErrors] = useState<Record<string, string>>({})
 
-  const handleInputChange = (field: keyof FormData, value: any) => {
+  const handleInputChange = (
+    field: keyof FormData,
+    value: string | boolean | Date | undefined,
+  ) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
     if (errors[field]) {
       setErrors((prev) => ({ ...prev, [field]: "" }))

@@ -1,40 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FoodiesBNB
 
-## Getting Started
+Aplicación de ejemplo construida con Next.js. Incluye autenticación básica mediante `next-auth` y un dashboard sencillo.
 
-First, run the development server:
+## Puesta en marcha
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clona este repositorio y entra en la carpeta del proyecto.
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+3. Copia el archivo `.env.example` a `.env.local` y ajusta `NEXTAUTH_SECRET` a un valor seguro.
+4. Ejecuta el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
+   La aplicación estará disponible en [http://localhost:3000](http://localhost:3000).
 
-### Environment variables
+## Credenciales de prueba
 
-Create a `.env.local` file based on `.env.example` and set `NEXTAUTH_SECRET`.
+Para acceder al panel puedes usar las siguientes credenciales de demostración:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Correo:** `demo@foodies.com`
+- **Contraseña:** `password`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Uso
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Abre la aplicación en tu navegador y haz clic en "Iniciar Sesión".
+2. Ingresa el correo y contraseña de prueba indicados arriba.
+3. Si las credenciales son correctas se mostrará el panel principal. De lo contrario se mostrará el mensaje "Usuario o contraseña incorrecto" debajo del botón de inicio de sesión.
 
-## Learn More
+## Notas
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+El proyecto está pensado sólo para fines de demostración. No utilices estas credenciales en un entorno real.
