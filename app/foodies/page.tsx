@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function FoodiesPage() {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -29,6 +31,14 @@ export default function FoodiesPage() {
                 Contenido exclusivo y primeras noticias
               </li>
             </ul>
+          </div>
+          <div className="text-center py-4">
+            <p className="text-gray-600 text-sm">
+              ¿No tienes una cuenta?{" "}
+              <Link href="/apply" className="text-red-500 hover:text-red-600 font-medium transition-colors">
+                Aplicar ahora
+              </Link>
+            </p>
           </div>
         </div>
       </div>
