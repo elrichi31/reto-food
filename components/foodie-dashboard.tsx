@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card, CardContent } from "@/components/ui/card"
 import { Heart, MapPin, Search, Star, Filter } from "lucide-react"
-import taquiera from "./../public/img/taqueria.jpg"
 interface Restaurant {
   id: number
   name: string
